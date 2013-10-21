@@ -17,7 +17,7 @@ angular
    			  },
 		      {
       			   name:"Susan",
-	   			   img:'images/family/susan.png'
+	   			   img:'images/family/susan.jpg'
    			  }
    			],
    			today:[
