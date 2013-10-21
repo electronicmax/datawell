@@ -1,0 +1,76 @@
+
+body {
+    margin-top:20px;
+}
+
+#family {
+    border: 0.5px solid rgba(0,0,0,1);
+    padding: 0px;
+    margin:0px;
+}
+
+.person_lens {
+    transition-property:all;
+    -moz-transition-property: all; /* Firefox 4 */
+    -webkit-transition-property:all; /* Safari and Chrome */
+    -o-transition-property:all; /* Opera */
+    transition-duration:300;
+    -webkit-transition-duration:300ms; /* Safari and Chrome */
+}
+.person_lens {
+    max-width:800px;
+    position:relative;
+    border: none;
+    padding:20px;
+    border: 1px solid rgba(0,0,0,0);    
+}
+.person_lens:hover {
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color:rgba(0,0,0,0.03);
+}
+
+.person_lens .edit_button {
+    display:none;
+    text-weight:bold;
+    position:absolute;
+    right:10px;
+    top:10px;
+    text-align:right;
+}
+.person_lens:hover .edit_button {
+    display:block;
+}
+.edit_button { cursor:hand; cursor:pointer;  }
+.person_lens > div {
+    vertical-align:top;
+    display:inline-block;
+}
+.person_lens .profile {
+    width:100px;
+    border:1px solid rgba(0,0,0,0.2);
+    margin-right:20px;
+}
+.person_lens .fields .options {
+    margin-top:12pt !important;
+}
+
+.sidebyside {
+    vertical-align:middle;
+    display:inline-block;
+    width:48%;
+    margin:2px;
+}
+.edit_form ul {
+    margin:0px;
+    list-style:none;
+}
+.edit_form ul ol {
+    margin:0px;
+    list-style:none;
+}
+.options {
+    line-height:auto;
+}
+.edit_form form {
+    margin:0px;
+}

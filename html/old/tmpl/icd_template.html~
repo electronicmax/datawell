@@ -1,0 +1,13 @@
+<div class="tab-pane">
+  <ul class="nav nav-pills">
+	<li class="active"><a href="#david_icd_overview" data-toggle="tab">overview</a></li>
+	<li class="active"><a href="#david_icd_status" data-toggle="tab">status</a></li>	
+	<li class="active"><a href="#david_icd_activity" data-toggle="tab">activity log</a></li>
+  </ul>
+</div>
+<div class="tab-content">			  
+  <div class="tab-pane active" id="david_icd_overview"></div>			  
+  <div class="tab-pane" id="nathan_details"></div>
+  <div class="tab-pane" id="nathan_devfirsts"></div>
+  <div class="tab-pane" id="nathan_sixweekreview"></div>
+</div>

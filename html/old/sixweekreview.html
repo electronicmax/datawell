@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+          <title>PInCH - 6-8 Week Review </title>
+          <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+          <link href="css/family.css" rel="stylesheet"></body>
+          <link href="css/nhs.css" rel="stylesheet"></body>
+	</head>
+	<body class="nhs_font">
+	  <div id="main">
+
+<!-- information label, e.g. name/address etc -->
+<div class="patientlabel nhs_blue">
+
+    <div class="label_row">
+        <span class="label_key">Surname:</span> <span class="label_value" id="surname"></span>
+    </div>
+    <div class="label_row">
+        <span class="label_key">First names:</span> <span class="label_value" id="firstname"></span>
+    </div>
+    <div class="label_row">
+        <div class="label_row_half"><span class="label_key">NHS Number:</span> <span class="label_value" id="nhsnumber"></span></div>
+        <div class="label_row_half"><span class="label_key">Unit No:</span> <span class="label_value" id="unitno"></span></div>
+    </div>
+    <div class="label_row">
+        <span class="label_key">Address:</span> <span class="label_value" id="address"></span>
+    </div>
+    <div class="label_row">
+        <span class="label_key">Postcode:</span> <span class="label_value" id="postcode"></span>
+    </div>
+    <div class="label_row">
+        <div class="label_row_half"><span class="label_key">DOB:</span> <span class="label_value" id="birthdate"></span></div>
+        <div class="label_row_half"><span class="label_key">Sex:</span> <span class="label_value" id="sex"></span></div>
+    </div>
+    <div class="label_row">
+        <div class="label_row_half"><span class="label_key">GP:</span> <span class="label_value" id="gp"></span></div>
+        <div class="label_row_half"><span class="label_key">Code:</span> <span class="label_value" id="gpcode"></span></div>
+    </div>
+    <div class="label_row">
+        <div class="label_row_half"><span class="label_key">HV:</span> <span class="label_value" id="hv"></span></div>
+        <div class="label_row_half"><span class="label_key">Code:</span> <span class="label_value" id="hvcode"></span></div>
+    </div>
+
+</div>
+<div class="clear_floats"></div>
+
+<!-- start of this page -->
+        <h1 class="nhs_blue">6-8 Week Review</h1>
+
+        <p>This review is usually done by your health visitor or a doctor. At this review
+        your baby will have a full physical examination. This is a chance to talk about your
+        baby, their health and general behaviour and discuss any worries, even minor things.
+        Here are some things you may want to talk about when you go for the review. Remember
+        that if you are worried about your child's health growth or development you can contact
+        your health visitor or doctor at any time.</p>
+
+            <ul class="questions">
+            </ul>
+          </div>
+          <script type="text/template" id="question_template">
+            <li>
+              <div class="sidebyside">
+                <label for="<%= qname %>"><%= qtext %></label>
+              </div>
+              <div class="sidebyside">
+                <div class="btn-group" data-name="<%= qname %>" data-toggle="buttons-radio">
+                  <% qvals.map(function(qval) { %> 
+                     <button class="btn <%= (response == qval) ? 'active' : '' %>"><%= qval %></button> 
+                  <% }); %>
+                </div>                                                  
+              </div>                            
+            </li>
+          </script>
+	  <script type="text/javascript" src="web/lib/jquery.min.js"></script>
+          <script type="text/javascript" src="web/lib/underscore-min.js"></script>
+          <script type="text/javascript" src="web/lib/backbone-min.js"></script>
+          <script type="text/javascript" src="lib/backbone-localstorage.js"></script>          
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.uri.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.xmlns.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.curie.js"></script>      
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.datatype.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdf.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdfa.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdf.xml.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdf.json.js"></script>  
+	  <script type="text/javascript" src="web/lib/require.js" data-main="js/sixweekreview.js"></script>
+          <script src="lib/bootstrap/js/bootstrap.js"></script>          
+	</body>        
+</html>

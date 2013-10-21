@@ -1,0 +1,36 @@
+.editor {
+    background-color:white;
+    padding:20px 40px;
+    z-index:1200;
+    min-width:700px;
+    overflow:auto;
+}
+.editor .editor_row {}
+.editor_row input {
+    width:300px;
+}
+.editor_row *{
+    font-size:8pt !important;
+} 
+.editor_row .key, .editor_row .val{
+    min-width:100px !important;
+    width:300px;
+    display:inline-block;
+}
+select {
+    width:100%;
+}
+.box {
+    min-height:150px;
+    overflow:none;
+}
+.peeps {
+    width:100%;
+    border:1px solid rgba(20,20,20,0.2);
+    padding:10 5px;
+    min-height:50px;
+    margin:10px 0px;
+}
+.person_selector {
+    width:100%;
+}

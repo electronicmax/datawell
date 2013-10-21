@@ -1,0 +1,301 @@
+<div class="alert">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>David </strong> needs to book an appointment for his annual ICD checkup in 2 weeks. <a href="#">Book now</a>
+</div>
+
+<div class="tab-pane">
+  <ul class="nav nav-pills">
+	<li class="active"><a href="#david_icd_overview" data-toggle="tab">overview</a></li>
+	<li><a href="#david_icd_status" data-toggle="tab">status</a></li>	
+	<li><a href="#david_icd_activity" data-toggle="tab" id="david_icd_activity_pill">activity log</a></li>
+  </ul>
+</div>
+<div class="tab-content">
+  <div class="tab-pane active" id="david_icd_overview">
+	<div class="row-fluid">
+	  <div class="span6">
+		<div class="happybox">
+		  <div class="happylabel">upcoming events</div>
+		  <table class="table table-hover">
+			<thead>
+			  <th>next event</th>
+			  <th>date</th>
+			  <th>to-do</th>		  
+			</thead>
+			<tbody>
+			  <tr>
+				<td>weekly data capture</td><td>4/12/2012 11:55pm</td><td>Nothing necessary</td>
+			  </tr>
+			  <tr>
+				<td>annual check-up</td><td>15/12/2012</td><td><a href="#">Book an appointment</a></td>
+			  </tr>		  
+			</tbody>
+		  </table>
+		</div>
+		<div class="happybox">
+		  <div class="happylabel">general info</div>
+		  <div class="row-fluid">
+			<dl class="span10 dl-horizontal">
+			  <dt>physician</dt><dd>Dr. John Smith</dd>
+			  <dt>manufacturer</dt><dd>Medtronic</dd>
+			  <dt>model</dt><dd>Concerto II CRT-D5</dd>
+			  <dt>installed</dt><dd>11/5/2005</dd>
+			  <dt>pacing</dt><dd class="label">enabled</dd>
+			  <dt>defrib</dt><dd class="label">enabled</dd>
+			  <dt>update</dt><dd>11/5/2005</dd>
+			  <dt>firmware</dt><dd>v.2.05.982c</dd>			  
+			</dl>
+		  </div>
+		</div>
+		<div class="happybox">
+		  <div class="happylabel">contact</div>
+		  <table class="table table-striped">
+			<tr><td>specialist</td><td>Dr. John Smith</td><td><div class="btn">contact</div></td></tr>
+			<tr><td>ICD technician</td><td>Dr. Lisa Bailey</td><td><div class="btn">contact</div></td></tr>			
+			<tr><td>hotline</td><td>Southampton General ICD Hotline</td><td><div class="btn">contact</div></td></tr>
+		  </table>
+		</div>
+		
+	  </div>
+	  <div class="span6">
+		<div class="happybox">
+		  <div class="happylabel">device status</div>
+		  <div class="row-fluid">Device status: <span class="label">Excellent.</span> </div>
+		  <div class="row-fluid">Last info received: <span class="label">Yesterday 11:55pm</span> </div>
+		  <div class="row-fluid">Received via: <a href="#">Carelink Direct</a> </div>
+		  <div class="row-fluid progress">
+			<div class="bar bar-success" style="width: 75%;"></div>
+			<div class="bar bar-warning" style="width: 10%;"></div>
+			<div class="bar bar-danger" style="width: 2%;"></div>
+		  </div>
+		  <div class="row-fluid">
+			<table class="span12 table table-hover">
+			  <thead>
+				<th>status</th>
+				<th>likelihood</th>
+				<th>meaning</th>		  
+			  </thead>
+			  <tbody>
+				<tr class="success">
+				  <td>device state</td><td>99%</td><td>Device is operating normally.</td>
+				</tr>
+				<tr class="success">
+				  <td>activity level</td><td>95%</td><td>Activity levels normal.</td>
+				</tr>			  
+				<tr class="info">
+				  <td>pacing state</td><td>10%</td><td>Pacing is slightly more frequent than average.</td>
+				</tr>
+				<tr class="error">
+				  <td>alerts</td><td>2%</td><td>Possible fluid accumulation.</td>
+				</tr>			  
+			  </tbody>
+			</table>
+		  </div>
+		</div>
+	  </div>
+	</div>	
+  </div> <!-- tab status -->
+  
+  <div class="tab-pane" id="david_icd_status">
+	<div class="row-fluid">
+	  <div class="span7 happybox">
+		<div class="happylabel">
+		  Device status
+		</div>
+		<table class="table table-hover">
+		  <tbody>
+			<tr>
+			  <td>date implanted</td><td>6 June 2011</td><td></td>
+			</tr>
+			<tr>
+			  <td>last full charge</td><td>9.7s</td><td>(4 Dec 2011)</td>
+			</tr>
+			<tr class="success">
+			  <td>battery voltage (RRT=2.63V)</td><td>3.12V</td><td>(2 Sept 2011)</td>
+			</tr>
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+	<div class="row-fluid">
+	  <div class="span7 happybox">
+		<div class="happylabel">impedance</div>		
+		<table class="table table-hover">
+		  <thead>
+			<th>atrial</th>
+			<th>RV</th>
+			<th>LV</th>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <td>pacing impedance</td><td>550 ohms</td><td> 449 ohms</td><td>>3000 ohms</td>
+			</tr>
+			<tr>
+			  <td>defrib impedance</td><td>550 ohms</td><td> 449 ohms</td><td>>3000 ohms</td>
+			</tr>
+			<tr>
+			  <td>capture threshold</td><td>2.00V/0.20ms</td><td>3.00/0.60ms</td><td>></td>
+			</tr>
+			<tr>
+			  <td>measured P/R wave</td><td>3.4mV</td><td>15.2 mV</td><td>></td>
+			</tr>
+		  </tbody>
+		</table>
+	  </div>
+	  <div class="span4 happybox">
+		<div class="happylabel">parameter summary</div>
+		<table class="table table-hover">
+		  <thead>
+			<th>parameter</th>
+			<th>val</th>
+		  </thead>		  
+		  <tbody>
+			<tr>
+			  <td>Mode</td><td>DDIR</td>
+			</tr>
+			<tr>
+			  <td>V.Pacing</td><td>RV</td>
+			</tr>
+			<tr>
+			  <td>Lower Rate</td><td>50 bpm</td>
+			</tr>
+			<tr>
+			  <td>Upper Sensor</td><td>120 bpm</td>
+			</tr>
+			<tr>
+			  <td>Paced AV</td><td>350 ms</td>
+			</tr>
+		  </tbody>
+		</table>
+	  </div><!--happybox-->
+	  
+	</div>
+	<div class="row-fluid">
+	  <div class="span8 happybox">
+		<div class="happylabel">modes</div>
+		<table class="table table-hover">
+		  <thead>
+			<th>detection</th>
+			<th></th>
+			<th>modes</th>
+			<th>therapies</th>
+		  </thead>		  
+		  <tbody>
+			<tr>
+			  <td>AT/AF</td><td>Monitor</td><td>>160bpm</td><td>All Rx Off</td>
+			</tr>
+			<tr>
+			  <td>VF</td><td>On</td><td>>220bpm</td><td>38J x 6</td>
+			</tr>
+			<tr>
+			  <td>FVT</td><td>via VF</td><td>>220-231bpm</td><td>Burst(3), 35Jx5</td>
+			</tr>
+			<tr>
+			  <td>VT</td><td>On</td><td>>150-200bpm</td><td>Burst(5), Burst(3), 35Jx4</td>
+			</tr>
+		  </tbody>
+		</table>
+	  </div><!--happybox-->
+	  <div class="row-fluid">
+		<div class="span4 happybox">
+		  <div class="happylabel">enhancements</div>
+		  <table class="table table-hover">
+			<thead>
+			  <th>type</th>
+			  <th>mode</th>
+			</thead>		  
+			<tbody>
+			  <tr>
+				<td>AF/Afl</td><td>On</td>
+			  </tr>
+			  <tr>
+				<td>Sinus Tach</td><td>On</td>
+			  </tr>
+			  <tr>
+				<td>Stability</td><td>On</td>
+			  </tr>
+			  <tr>
+				<td>Onset(Monitor)</td><td>On</td>
+			  </tr>
+			  <tr>
+				<td>VT(Monitor)</td><td>On</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div><!--happybox-->	  
+	  </div>
+	</div>
+  </div>
+  
+  <!-- icd activity -->
+  <div class="tab-pane" id="david_icd_activity">
+	<div class="row-fluid">
+	  <div class="span7 happybox">
+		<div class="happylabel">physical activity (past 24 hrs)</div>
+		<div id="icd_graph1" style="padding:0px; height:500px"></div>
+	  </div>
+	  <div class="span5" style="padding:0px; margin:0px;">
+		<div class="happybox span12">
+		  <div class="happylabel">Treated VT/VF & AT/AF (1 week)</div>
+	      <div id="icd_graph2" style="height:200px"></div>
+		</div>
+		<div class="happybox span12">
+		  <div class="happylabel">physical activity (1 week)</div>
+		  <div id="icd_graph3" style="height:200px"></div>
+		</div>
+	  </div>
+	</div>
+	<div class="row-fluid">
+	  
+	  <table class="span2 table table-hover">
+		<thead>
+		  <th>treated</th>
+		  <th>count</th>
+		</thead>
+		<tbody>
+		  <tr><td>VF</td><td>0</td></tr>
+		  <tr><td>FVT</td><td>0</td></tr>
+		  <tr><td>VT</td><td>0</td></tr>
+		  <tr><td>AT/AF</td><td>0</td></tr>
+		</tbody>
+	  </table>
+	  <table class="span3 table table-hover">
+		<thead>
+		  <th>monitored</th>
+		  <th>count</th>
+		</thead>
+		<tbody>
+		  <tr><td>VT (133-150bpm)</td><td>0</td></tr>
+		  <tr><td>VT-NS (>4 beats, >150bpm)</td><td>0</td></tr>
+		  <tr><td>SVT:VT/VF Rx Withheld</td><td>0</td></tr>
+		  <tr><td>AT/AF</td><td>0</td></tr>
+		</tbody>
+	  </table>
+	  <table class="span4 table table-hover">
+		<thead>
+		  <th>therapy summary</th>
+		  <th>VT/VF</th>
+		  <th>AT/AF</th>		  
+		</thead>
+		<tbody>
+		  <tr><td>Pace-Terminated Episodes</td><td>0</td><td>0</td></tr>
+		  <tr><td>Shock-Terminated Episodes</td><td>0</td><td>0</td></tr>
+		  <tr><td>Total Shocks</td><td>0</td><td>0</td></tr>
+		  <tr><td>Aborted Charges</td><td>0</td><td>0</td></tr>
+		</tbody>
+	  </table>
+	  <table class="span3 table table-hover">
+		<thead>
+		  <th>pacing</th><th>% time</th>
+		</thead>
+		<tbody>
+		  <tr><td>AS-VS</td><td>31.2%</td></tr>
+		  <tr><td>AS-VP</td><td><.1%</td></tr>
+		  <tr><td>AP-VS</td><td>82.0$</td></tr>
+		  <tr><td>AP-VP</td><td>0.5%</td></tr>
+		</tbody>
+	  </table>	  
+	</div>
+  </div>
+  
+</div>

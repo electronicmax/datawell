@@ -1,0 +1,192 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+          <title>PInCH - My family </title>
+          <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+          <link href="css/family.css" rel="stylesheet">          
+          <link href="css/nhs.css" rel="stylesheet">          
+	</head>
+	<body class="nhs_font">
+	  <div id="main">	    
+            <h1 class="nhs_blue">PInCH : Personal Integrated Coordination for Health </h1>
+            <h2 class="nhs_blue">The Williams Family Children</h2>
+            <div id="family">
+              <div class="person_list">
+                  <div class="person_lens">
+                    <img class="profile" src="img/nathan.jpg">
+                    <div class="fields">
+                      <div class="edit_button">[ Edit ]</div>
+                      <div class="basicstats">
+                        <div class="firstname">Nathan</div>
+                        <div class="age">(age 1.5 months)</div>                        
+                      </div>
+                      <div class="edit_form"></div>                      
+                      <div class="options">
+                        Infant Development:
+                        <div class="btn-group">
+                          <button class="btn" id="devfirsts_nathan">Developmental firsts</button>
+                          <button class="btn" disabled="disabled">Speech review</button>
+                          <button class="btn" id="sixweekreview_nathan">6-8 Week review</button>
+                        </div>
+                      </div>
+                      <div class="options">
+                        Growth:
+                        <div class="btn-group">
+                          <button class="btn" disabled="disabled">Weight + Growth</button>                          
+                          <button class="btn" disabled="disabled">Vaccination</button>
+                          <button class="btn" disabled="disabled">Wellness Record</button>
+                        </div> <!-- buttons -->
+                      </div>
+                    </div> <!-- fields --> 
+                  </div>                                                    
+                  <div class="person_lens">
+                      <img class="profile" src="img/bobby.jpg">
+                      <div class="fields">
+                        <div class="edit_button">[ Edit ]</div>
+                        <div class="basicstats">                                                
+                          <div class="name">Bobby</div>
+                          <div class="age">(age 2.5)</div>
+                        </div>
+                      <div class="edit_form"></div>                      
+                      <div class="options">
+                        <div class="options btn-group">
+                          <button class="btn" disabled="disabled">Weight + Growth</button>
+                          <button class="btn" disabled="disabled">Vaccination</button>
+                          <button class="btn" disabled="disabled">Wellness Record</button>
+                        </div>
+                      </div>
+                      <div class="options">                      
+                        Toddler Development
+                        <div class="options btn-group">
+                          <button class="btn" disabled="disabled">Year 3 Review</button>
+                          <button class="btn" disabled="disabled">Speech diagnostic</button>
+                        </div>
+                      </div>                        
+                  </div>
+                  </div>
+                  <div class="person_lens">
+                    <img class="profile" src="img/sheyla.jpg">
+                    <div class="fields">
+                      <div class="edit_button">[ Edit ]</div>
+                      <div class="basicstats">                        
+                        <div class="name">Annie</div>
+                        <div class="age">(age 8)</div>
+                      </div>
+                      <div class="edit_form"></div>                      
+                      <div class="options">
+                        Growth:
+                        <div class="btn-group">
+                          <button class="btn" disabled="disabled">Weight + Growth</button>                          
+                          <button class="btn" disabled="disabled">Vaccination</button>
+                          <button class="btn" disabled="disabled">Wellness Record</button>
+                        </div> <!-- buttons -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="person_lens">
+                    <img class="profile" src="img/david.jpg">
+                    <div class="fields">
+                      <div class="edit_button">[ Edit ]</div>
+                      <div class="basicstats">                        
+                        <div class="name">David</div>
+                        <div class="age">(age 50)</div>
+                      </div>
+                      <div class="edit_form"></div>                      
+                      <div class="options">
+                        Adult Disease Monitoring:
+                        <div class="btn-group">
+                          <button class="btn" id="cvd_david">Cardiovascular Disease (CVD)</button>                          
+                          <button class="btn" disabled="disabled">Diabetes</button>
+                          <button class="btn" disabled="disabled">Cancer</button>
+                        </div> <!-- buttons -->
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>            
+          </div>
+
+          <!-- templates -->
+          <script type="text/template" id="child_details_form">
+              <ul>
+                <li>
+                  <div class="sidebyside">
+                    <label for="firstname">Given name</label>
+                    <input name="firstname" type=text placeholder="Given name" value="<%= attributes.firstname %>" required autofocus>
+                  </div>
+                  <div class="sidebyside">
+                    <label for="surname">Family name</label>
+                    <input name="surname" type=text placeholder="Family name" value="<%= attributes.surname %>" required autofocus>
+                  </div>                            
+                </li>
+                <li>
+                  <div class="sidebyside">
+                    <label for="birthdate">Birthdate</label>
+                    <input id=birthdate name=birthdate type=text placeholder="DD/MM/YYYY" value="<%= attributes.birthdate %>" required autofocus>
+                  </div>
+                  <div class="sidebyside">
+                    <label for="sex">Gender</label>
+                    <div class="btn-group" data-name="sex" data-toggle="buttons-radio">
+                      <button class="btn <%= (attributes.sex == "Male") ? 'active' : '' %>"> Male</button>
+                      <button class="btn <%= (attributes.sex == "Female") ? 'active' : '' %>"> Female</button>
+                    </div>                              
+                  </div>                            
+                </li>
+                <li>
+                  <div class="sidebyside">
+                    <label for="nhsnumber">NHS Number</label>
+                    <input id=name name=nhsnumber type=text placeholder="NHS #" value="<%= attributes.nhsnumber %>" required autofocus>
+                  </div>
+                  <div class="sidebyside">
+                    <label for="unitno">Unit No</label>
+                    <input id=unitno name=unitno type=text placeholder="Unit #" value="<%= attributes.unitno %>" required autofocus>           
+                  </div>
+                <li>
+                  <div class="sidebyside">                            
+                    <label for="address">Address</label>
+                    <input id=address name=address type=text placeholder="Address" value="<%= attributes.address %>" required autofocus>
+                  </div>
+                  <div class="sidebyside">                            
+                    <label for="postcode">Postcode</label>
+                    <input id=postcode name=postcode type=text placeholder="Postcode" value="<%= attributes.postcode %>" required autofocus>
+                  </div>
+                <li>
+                  <div class="sidebyside">                            
+                    <label for="gp">GP</label>
+                    <input id=gp name=gp type=text placeholder="GP" value="<%= attributes.gp %>" required autofocus>
+                  </div>
+                  <div class="sidebyside">
+                    <label for="gpcode">GP code</label>
+                    <input id= name=gpcode type=text placeholder="GP code" value="<%= attributes.gpcode %>" required autofocus>
+                  </div>
+                </li>
+                <li>
+                  <div class="sidebyside">
+                    <label for="hv">HV</label>
+                    <input id="hv" name="hv" type=text placeholder="HV" value="<%= attributes.hv %>"  required autofocus>
+                  </div>
+                  <div class="sidebyside">
+                    <label for="hvcode">HV code</label>
+                    <input id="hvcode" name="hvcode" type=text placeholder="HV Code" value="<%= attributes.hvcode %>" required autofocus>
+                  </div>
+                </li>
+              </ul> 
+  
+            </script>
+
+	  <script type="text/javascript" src="web/lib/jquery.min.js"></script>
+          <script type="text/javascript" src="web/lib/underscore-min.js"></script>
+          <script type="text/javascript" src="web/lib/backbone-min.js"></script>
+          <script type="text/javascript" src="lib/backbone-localstorage.js"></script>          
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.uri.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.xmlns.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.curie.js"></script>      
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.datatype.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdf.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdfa.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdf.xml.js"></script>
+	  <script type="text/javascript" src="web/lib/rdfquery/jquery.rdf.json.js"></script>  
+	  <script type="text/javascript" src="web/lib/require.js" data-main="js/family.js"></script>
+          <script src="lib/bootstrap/js/bootstrap.js"></script>          
+	</body>        
+</html>

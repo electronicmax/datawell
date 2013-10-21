@@ -1,0 +1,200 @@
+/* global declarations */
+@font-face {
+	font-family: 'District Thin';
+    src: url('../web/ui/fonts/DistTh___.ttf');
+}
+* {
+	box-sizing:border-box;
+}
+body {
+
+	margin-top:80px;
+    background-color:white;
+    color:black;
+	font-family: "District Thin" sans-serif;
+	font-size:12pt;
+}
+.btn-group > .btn, .btn {
+	font-size:11pt !important; // overriding bootstraps insane defaults
+}
+li { list-style-type: none; }
+
+
+@sidebar-width:148px;
+.pinch-container {
+    position:fixed;
+	top:0px; left:0px; bottom:0px; right:0px;
+	padding:50px;
+}           
+#topnav  {
+	ul.nav.nav-tabs  {
+		background-color:rgba(230,230,230,0.8) !important;
+		position:absolute;
+		top:0px; left:0px; bottom:0px; width:@sidebar-width;
+		li {
+			font-size:14pt;
+			text-align:right !important;
+			font-weight:100;
+			a { padding:24px 15px 22px 0px;   }
+			&.active {
+				background-color:white !important;
+			}
+		}
+	}
+	.top-pane {
+		position:absolute;
+		top:0px; bottom:0px; right:0px; left:@sidebar-width; 
+		padding:0px 0px 0px 0px;
+		overflow-y:auto;
+	}
+	.pinch-panes .tab-pane {
+		// padding:20px 30px 100px 20px;
+		.hero-unit {
+			color:white;
+			padding:28px 30px 23px 28px !important;
+			font-size:28pt;
+		}
+		&.home .hero-unit {
+			color:black;
+			background-color:rgba(230,230,230,0.5); 
+			// background-color:rgba(0,0,255,0.7);
+		}	   
+		&.details .hero-unit { background-color:orange;  }
+		&.cvd .hero-unit { background-color:purple;  }
+		&.devfirsts .hero-unit {background-color: gold; }	 	   
+		&.sixweekrvw .hero-unit { background-color:pink;  }
+		.container {
+			margin-left: 0px !important;
+			padding-left:0px !important;
+			width:700px !important;
+			p {  margin:0px 0px 10px 5px;  }
+			ul { pargin: margin:0px 0px 10px 5px;  }
+			h2 { pargin: margin:0px 0px 10px 5px;  }
+		}
+		ul { margin-left: 5px !important; }
+
+		&.home {
+			/* corp blue */
+			.container {
+				width: 800px !important;
+				margin-left:10px !important;
+			}
+			.nhs_border { padding:10px; border: 1px dashed #3D62D1; }
+			.nhs_blue {  color: #3D62D1 !important; }
+			.nhs_label {
+				.nhs_blue;
+				div {
+					display:block;
+					line-height:2.2em;
+					.label_row_half {
+						display:inline-block !important;
+						width: 240px;
+					}
+					.label_key {
+						font-weight: bold;
+					}
+					.label_value {
+						color:black;
+						border-top: 0px;
+						border-left: 0px;
+						border-bottom: 1px dashed #3D62D1;
+						border-right: 0px;
+						margin-left:2px; padding-left:2px;
+					}						
+				}
+			}			
+		}
+
+		// cvd specific
+		&.cvd {
+			li { line-height:3em; }
+			.sideleft {	width:150px;}
+		}
+
+		// sixweekrvw specific
+		&.sixweekrvw {
+			li { line-height:50px; }
+			.questions { padding:15px !important; }
+		}
+	}
+}       
+.hide { display:none; }
+h1 { font-weight:100; font-size:18pt; margin-bottom:12pt;}
+h2 { font-weight:100; font-size:16pt; }
+h3 { font-weight:100; font-size:12pt; }
+#main {
+    margin-left:40px;
+    margin-right:auto;
+}
+
+// to be cleaned up  -- nhs.css ------
+/* corp font */
+
+/* box for developmental firsts (float) */
+.df_box {  float: left; width: 200px;   padding: 15px;  }
+
+/* developmental first input box */
+.df_box > p > label > input {
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 1px dashed #3D62D1;
+    border-right: 0px;
+    width: 3em;
+    text-align: right;
+    display: inline;
+    margin-top: 10px;
+}
+
+.clear_floats {  clear: both; }
+
+.headshot {
+	text-align:right;
+    display: inline;
+    margin: 15px 0px 15px 25px;
+    height: 200px;
+}
+
+.patientlabel2 {
+    font-size:9pt;
+    border: 2px dashed #3D62D1;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.patientlabel {
+    font-size:9pt;
+    float: right;
+    margin-right:20px;
+    width: 400px;
+    border: 2px dashed #3D62D1;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+
+.motto {
+	font-weight:100;
+	font-size:18pt;
+	padding:15px;	
+	height:160px;
+	bottom:20px;left:10px;	
+	position:absolute;
+	width:160px;	
+	line-height:0.92em;
+	color:white; 
+	background-color:rgba(190, 190, 60, 0.9); // rgba(100,230,230,0.8);	
+}
+.webbox {
+	font-size:26pt;
+	font-weight:300;
+	height:160px;		width:160px;	
+	bottom:20px;left:180px;	
+	padding:15px;
+	position:absolute;
+	line-height:1.2em;
+	background-color:rgba(200,200,200,0.8);
+	color:rgba(255,255,255,1.0);
+	vertical-align:bottom;
+}

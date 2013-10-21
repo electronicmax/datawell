@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <!--<link href="css/bootstrap.css" rel="stylesheet">-->
+	 
+	  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="css/jquery-ui.css" rel="stylesheet">
+      <link href="css/family.css" rel="stylesheet">
+	  <!-- line plot --> 
+      <link href="lib/chart/style.css" rel="stylesheet">
+      <script src="lib/chart/line-graph.js" type="text/javascript"></script>
+	  <!-- -->	  
+	  <link rel="stylesheet/less" href="css/pinch.less">
+	  <link rel="stylesheet/less" href="css/icd.less">
+	  <script src="lib/lesscss.min.js" type="text/javascript"></script>
+	  <title>PInCH personal health record</title>
+	</head>
+	<body>
+	  <div class="pinch-container">
+		<div id="topnav" class="tabbable tabs-left">
+		  <ul id="peoplenav" class="nav nav-tabs">
+			<li class="active"><a href="#top_family" data-toggle="tab">our family</a></li>
+			<li><a href="#top_person_0" data-toggle="tab">david</a></li>
+			<li><a href="#top_person_1" data-toggle="tab">annie</a></li>
+			<li><a href="#top_person_2" data-toggle="tab">nathan</a></li>						
+		  </ul>
+		  <div class="top-pane tab-content">
+			<div class="tab-pane active" id="top_family">
+			  <div class="container">
+				<h1 style="text-align:right">family health dashboard </h1>
+				<div class="row">
+                  <a class="span3" style="text-align: center;" onclick="$($('#peoplenav a')[1]).tab('show'); return false;">
+					<img src="img/david.jpg" class="headshot" />
+					<p>David Matthews</p>
+                  </a>
+                  <a class="span3" style="text-align: center;" onclick="$($('#peoplenav a')[2]).tab('show'); return false;">
+					<img src="img/annie.jpg" class="headshot" />
+					<p>Annie Matthews</p>
+                  </a>
+                  <a class="span3" style="text-align: center;" onclick="$($('#peoplenav a')[3]).tab('show'); return false;">
+					<img src="img/nathan.jpg" class="headshot" />
+					<p>Nathan Matthews</p>
+                  </a>
+				  <div class="motto">
+					personal integrated coordination for health
+				  </div>
+				  <div class="webbox">webbox data vault</div>				  
+				</div>
+			  </div>
+			</div>
+			<div class="tab-pane" id="top_person_0">
+			  <!-- david's navbar -->			  
+			  <div class="navbar navbar-static-top">
+				<div class="navbar-inner">
+				  <a class="brand" href="#">david's health record</a>
+				  <ul class="nav">
+					<li class="active"><a href="#david_home" data-toggle="tab">home</a></li>
+					<li><a href="#david_details" data-toggle="tab">details</a></li>
+					<li><a href="#david_icd" data-toggle="tab">My ICD</a></li>										
+					<li><a href="#david_cvd" data-toggle="tab">Cardiovascular treatment (CVD)</a></li>
+				  </ul>
+				</div>
+			  </div>
+			  <!-- david's content -->			  
+			  <div class="tab-content pinch-panes">
+				<div class="tab-pane active home" id="david_home"></div>		
+				<div class="tab-pane details" id="david_details"></div>
+				<div class="tab-pane cvd" id="david_cvd"></div>
+				<div class="tab-pane icd" id="david_icd"></div>				
+			  </div>
+			</div>
+			
+			<div class="tab-pane" id="top_person_1">
+			  <div class="navbar navbar-static-top">
+				<div class="navbar-inner">
+				  <a class="brand" href="#">annie's health record</a>
+				  <ul class="nav">
+					<li class="active"><a href="#annie_home" data-toggle="tab">home</a></li>
+					<li><a href="#annie_details" data-toggle="tab">details</a></li>
+				  </ul>
+				</div>
+			  </div><!-- navbar -->			  
+			  <div class="tab-content pinch-panes">			  
+				<div class="tab-pane active home" id="annie_home"></div>			  
+				<div class="tab-pane details" id="annie_details"></div>
+			  </div>
+			</div>
+			
+			<div class="tab-pane" id="top_person_2">
+			  <div class="navbar navbar-static-top">
+				<div class="navbar-inner">
+				  <a class="brand" href="#">nathan's health record</a>
+				  <ul class="nav">
+					<li class="active"><a href="#nathan_home" data-toggle="tab">home</a></li>
+					<li><a href="#nathan_details" data-toggle="tab">details</a></li>
+					<li><a href="#nathan_devfirsts" data-toggle="tab">developmental firsts</a></li>
+					<li><a href="#nathan_sixweekreview" data-toggle="tab">six week review</a></li>
+				  </ul>
+				</div>
+			  </div><!-- navbar -->			  			  
+			  <div class="tab-content pinch-panes">			  
+				<div class="tab-pane active home" id="nathan_home"></div>			  
+				<div class="tab-pane details" id="nathan_details"></div>
+				<div class="tab-pane devfirsts" id="nathan_devfirsts"></div>
+				<div class="tab-pane sixweekrvw" id="nathan_sixweekreview"></div>
+			  </div>
+			</div>			
+		  </div>
+		</div>
+	  </div>
+	</body>
+    <script src="lib/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<script src="lib/underscore-min.js" type="text/javascript"></script>
+	<script src="lib/backbone.js" type="text/javascript"></script>
+    <script type="text/javascript" src="lib/backbone-localstorage.js"></script>          
+	<script src="lib/require.js"></script>
+	<script type="text/javascript">
+		// because we're not in the same place as the rest of our html files,
+		// we have got to manually tell require how to resolve things 
+		$(document).ready(function() {
+				// demo specific initialistation here
+			var path = document.location.pathname;
+			var basepath = path.slice(0,path.lastIndexOf('/'));
+		    window.__basepath__ = basepath;	
+			require.config({ baseUrl: basepath });
+			require(['js/single'],function() {});
+		});    
+	</script>
+	<script type="text/javascript" src="lib/d3.v2.min.js"></script>
+	<!-- no need for maps right now
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+	-->	  
+	<script src="lib/jquery-ui.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script type="text/template" id="family_template">
+      <h1 class="nhs_blue">PInCH : Personal Integrated Coordination for Health </h1>
+      <h2 class="nhs_blue">The Williams Family Children</h2>
+      <div id="family">
+        <div class="person_list">
+          <div class="person_lens">
+            <img class="profile" src="img/nathan.jpg">
+            <div class="fields">
+              <div class="edit_button">[ Edit ]</div>
+              <div class="basicstats">
+                <div class="firstname">Nathan</div>
+                <div class="age">(age 1.5 months)</div>                        
+              </div>
+              <div class="edit_form"></div>                      
+              <div class="options">
+                Infant Development:
+                <div class="btn-group">
+                  <button class="btn" id="devfirsts_nathan">Developmental firsts</button>
+                  <button class="btn" disabled="disabled">Speech review</button>
+                  <button class="btn" id="sixweekreview_nathan">6-8 Week review</button>
+                </div>
+              </div>
+              <div class="options">
+                Growth:
+                <div class="btn-group">
+                  <button class="btn" disabled="disabled">Weight + Growth</button>                          
+                  <button class="btn" disabled="disabled">Vaccination</button>
+                  <button class="btn" disabled="disabled">Wellness Record</button>
+                </div> <!-- buttons -->
+              </div>
+            </div> <!-- fields --> 
+          </div>                                                    
+          <div class="person_lens">
+            <img class="profile" src="img/bobby.jpg">
+            <div class="fields">
+              <div class="edit_button">[ Edit ]</div>
+              <div class="basicstats">                                                
+                <div class="name">Bobby</div>
+                <div class="age">(age 2.5)</div>
+              </div>
+              <div class="edit_form"></div>                      
+              <div class="options">
+                <div class="options btn-group">
+                  <button class="btn" disabled="disabled">Weight + Growth</button>
+                  <button class="btn" disabled="disabled">Vaccination</button>
+                  <button class="btn" disabled="disabled">Wellness Record</button>
+                </div>
+              </div>
+              <div class="options">                      
+                Toddler Development
+                <div class="options btn-group">
+                  <button class="btn" disabled="disabled">Year 3 Review</button>
+                  <button class="btn" disabled="disabled">Speech diagnostic</button>
+                </div>
+              </div>                        
+            </div>
+          </div>
+          <div class="person_lens">
+            <img class="profile" src="img/sheyla.jpg">
+            <div class="fields">
+              <div class="edit_button">[ Edit ]</div>
+              <div class="basicstats">                        
+                <div class="name">Annie</div>
+                <div class="age">(age 8)</div>
+              </div>
+              <div class="edit_form"></div>                      
+              <div class="options">
+                Growth:
+                <div class="btn-group">
+                  <button class="btn" disabled="disabled">Weight + Growth</button>                          
+                  <button class="btn" disabled="disabled">Vaccination</button>
+                  <button class="btn" disabled="disabled">Wellness Record</button>
+                </div> <!-- buttons -->
+              </div>
+            </div>
+          </div>
+          <div class="person_lens">
+            <img class="profile" src="img/david.jpg">
+            <div class="fields">
+              <div class="edit_button">[ Edit ]</div>
+              <div class="basicstats">                        
+                <div class="name">David</div>
+                <div class="age">(age 50)</div>
+              </div>
+              <div class="edit_form"></div>                      
+              <div class="options">
+                Adult Disease Monitoring:
+                <div class="btn-group">
+                  <button class="btn" id="cvd_david">cardiovascular disease (CVD)</button>                          
+                  <button class="btn" disabled="disabled">Diabetes</button>
+                  <button class="btn" disabled="disabled">Cancer</button>
+                </div> <!-- buttons -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>            
+</div>
+</script>
+<script type="text/template" id="patient_details_form_template">
+  <div class="hero-unit"><%= attributes.firstname %>'s details</div>
+  <div class="container">
+    <ul>
+      <li>
+        <div class="sidebyside">
+          <label for="firstname">Given name</label>
+          <input name="firstname" type=text placeholder="Given name" value="<%= attributes.firstname %>" required autofocus>
+        </div>
+        <div class="sidebyside">
+          <label for="surname">Family name</label>
+          <input name="surname" type=text placeholder="Family name" value="<%= attributes.surname %>" required autofocus>
+        </div>                            
+      </li>
+      <li>
+        <div class="sidebyside">
+          <label for="birthdate">Birthdate</label>
+          <input id=birthdate name=birthdate type=text placeholder="DD/MM/YYYY" value="<%= attributes.birthdate %>" required autofocus>
+        </div>
+        <div class="sidebyside">
+          <label for="sex">Gender</label>
+          <div class="btn-group" data-name="sex" data-toggle="buttons-radio">
+            <button type="button" class="btn <%= (attributes.sex == "Male") ? 'active' : '' %>"> Male</button>
+            <button type="button" class="btn <%= (attributes.sex == "Female") ? 'active' : '' %>"> Female</button>
+          </div>                              
+        </div>                            
+      </li>
+      <li>
+        <div class="sidebyside">
+          <label for="nhsnumber">NHS Number</label>
+          <input id=name name=nhsnumber type=text placeholder="NHS #" value="<%= attributes.nhsnumber %>" required autofocus>
+        </div>
+        <div class="sidebyside">
+          <label for="unitno">Unit No</label>
+          <input id=unitno name=unitno type=text placeholder="Unit #" value="<%= attributes.unitno %>" required autofocus>           
+        </div>
+      <li>
+        <div class="sidebyside">                            
+          <label for="address">Address</label>
+          <input id=address name=address type=text placeholder="Address" value="<%= attributes.address %>" required autofocus>
+        </div>
+        <div class="sidebyside">                            
+          <label for="postcode">Postcode</label>
+          <input id=postcode name=postcode type=text placeholder="Postcode" value="<%= attributes.postcode %>" required autofocus>
+        </div>
+      <li>
+        <div class="sidebyside">                            
+          <label for="gp">GP</label>
+          <input id=gp name=gp type=text placeholder="GP" value="<%= attributes.gp %>" required autofocus>
+        </div>
+        <div class="sidebyside">
+          <label for="gpcode">GP code</label>
+          <input id= name=gpcode type=text placeholder="GP code" value="<%= attributes.gpcode %>" required autofocus>
+        </div>
+      </li>
+      <li>
+        <div class="sidebyside">
+          <label for="hv">HV</label>
+          <input id="hv" name="hv" type=text placeholder="HV" value="<%= attributes.hv %>"  required autofocus>
+        </div>
+        <div class="sidebyside">
+          <label for="hvcode">HV code</label>
+          <input id="hvcode" name="hvcode" type=text placeholder="HV Code" value="<%= attributes.hvcode %>" required autofocus>
+        </div>
+      </li>
+    </ul> 
+  </div>
+</script>
+<!-- information label, e.g. name/address etc -->
+<script type="text/template" id="patient_label_template">
+  <div class="hero-unit">NHS Record for <%= attributes.firstname %> <%= attributes.surname %></div>
+  <div class="container nhs_border">
+	<div class="row-fluid">
+	  <div class="span4">
+		<img class="profile headshot" src="img/<%= id %>.jpg">
+	  </div>
+	  <div class="span8 nhs_label">
+		<div>
+		  <div class="label_row_half"><span class="label_key">First name:</span> <span class="label_value" id="firstname"></span></div>
+		  <div class="label_row_half"><span class="label_key">Surname:</span> <span class="label_value" id="surname"></span></div>
+		</div>
+		<div>
+		  <div class="label_row_half"><span class="label_key">NHS Number:</span> <span class="label_value" id="nhsnumber"></span></div>
+		  <div class="label_row_half"><span class="label_key">Unit No:</span> <span class="label_value" id="unitno"></span></div>
+		</div>
+		<div>
+		  <div class="label_row_half"><span class="label_key">Address:</span> <span class="label_value" id="address"></span></div>
+		  <div class="label_row_half"><span class="label_key">Postcode:</span> <span class="label_value" id="postcode"></span></div>
+		</div>
+		<div>
+		  <div class="label_row_half"><span class="label_key">DOB:</span> <span class="label_value" id="birthdate"></span></div>
+		  <div class="label_row_half"><span class="label_key">Sex:</span> <span class="label_value" id="sex"></span></div>
+		</div>
+		<div>
+		  <div class="label_row_half"><span class="label_key">GP:</span> <span class="label_value" id="gp"></span></div>
+		  <div class="label_row_half"><span class="label_key">Code:</span> <span class="label_value" id="gpcode"></span></div>
+		</div>
+		<div>
+		  <div class="label_row_half"><span class="label_key">HV:</span> <span class="label_value" id="hv"></span></div>
+		  <div class="label_row_half"><span class="label_key">Code:</span> <span class="label_value" id="hvcode"></span></div>
+		</div>
+	  </div>
+  </div>
+  </div>
+</script>
+
+
+<!-- start of the information -->
+<script type="text/template" id="devfirsts_template">
+<div class="hero-unit">developmental firsts</div>
+<div class="container">
+
+  <p>Babies want to explore the world around them. Your baby grows
+	and learns faster in the first year than at any other time. There
+	are many things that all babies and young children do, but not
+	always at the same age or in the same order. Use these pages to
+	note down when your child does things for the first time.</p>
+
+  <div class="nhs_blue">
+	<h2 class="nhs_blue">Finding out about moving...</h2>
+	<div class="df_box">
+	  <p><label for="df_1">Lifts head clear of ground, aged: <input class="df_1" />months</label></p>
+	  <img src="img/1-head_rolls.png" />
+	  <p><label for="df_2">Rolls over, aged: <input class="df_2" />months</label></p>
+	</div>
+
+	<div class="df_box">
+	  <p><label for="df_3">Sits with support, aged: <input class="df_3" />months</label></p>
+	  <img src="img/2-sits.png" />
+	  <p><label for="df_4">Sits alone, aged: <input class="df_4" />months</label></p>
+	</div>
+
+	<div class="df_box">
+	  <p><label for="df_5">Crawls, aged: <input class="df_5" />months</label></p>
+	  <img src="img/3-crawls.png" />
+	  <p><label for="df_6">and/or Bottom shuffles, aged: <input class="df_6" />months</label></p>
+	</div>
+
+	<div class="clear_floats"></div>
+
+	<div class="df_box">
+	  <p><label for="df_7">Stands holding on, aged: <input class="df_7" />months</label></p>
+	  <img src="img/4-stands.png" />
+	  <p><label for="df_8">Stands alone, aged: <input class="df_8" />months</label></p>
+	</div>
+
+	<div class="df_box">
+	  <p><label for="df_9">Walks holding on, aged: <input class="df_9" />months</label></p>
+	  <img src="img/5-walks.png" />
+	  <p><label for="df_10">Walks alone, aged: <input class="df_10" />months</label></p>
+	</div>
+
+	<div class="df_box">
+	  <p><label for="df_11">First outdoor walk, aged: <input class="df_11" />months</label></p>
+	  <img src="img/6-outdoorwalk.png" />
+	</div>
+</div>
+</div>
+
+
+<h2>See <i>Birth to Five</i> for more information on children's development.</h2>
+</script>
+
+<!-- start of this page -->
+<script type="text/template" id="sixweekreview_template">
+<div class="hero-unit">six week review</div>
+<div class="container">
+  <p>
+	This review is usually done by your health visitor or a doctor. At this review
+	your baby will have a full physical examination. This is a chance to talk about your
+	baby, their health and general behaviour and discuss any worries, even minor things.
+	Here are some things you may want to talk about when you go for the review. Remember
+	that if you are worried about your child's health growth or development you can contact
+	your health visitor or doctor at any time.
+  </p>
+  <p>
+	<ul class="questions">
+	</ul>
+  </p>
+</div>
+</script>
+
+<script type="text/template" id="question_template">
+  <li>
+    <div class="sidebyside">
+      <label for="<%= qname %>"><%= qtext %></label>
+    </div>
+    <div class="sidebyside">
+      <div class="btn-group" data-name="<%= qname %>" data-toggle="buttons-radio">
+        <% qvals.map(function(qval) { %> 
+        <button class="btn <%= (response == qval) ? 'active' : '' %>"><%= qval %></button> 
+        <% }); %>
+      </div>                                                  
+    </div>                            
+  </li>
+</script>
+
+<script type="text/template" id="cvd_template">
+  <div class="hero-unit">cardiovascular disease (cvd)</div>
+  <div class="container">
+	<ul class="questions2"></ul>
+  </div>
+</script>
+
+<script type="text/template" id="question_template2">
+  <li>
+    <div class="sidebyside sideleft">
+      <label for="<%= qname %>"><%= qtext %></label>
+    </div>
+    <div class="sidebyside sideright">
+      <div class="btn-group" data-name="<%= qname %>" data-toggle="buttons-radio">
+        <% qvals.map(function(qval) { %> 
+        <button class="btn <%= (response == qval) ? 'active' : '' %>"><%= qval %></button> 
+        <% }); %>
+      </div>                                                  
+    </div>                            
+  </li>
+</script>
+
+</html>
