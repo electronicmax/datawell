@@ -16,7 +16,16 @@
       <person ng-repeat="p in people" model='p'></person>
     </div>
     <div class="main">
-      <div class="tabbar"></div>
+      <div class="tabbar">
+        <ul>
+          <li ng-repeat="plan in current_person.plans">
+            <a href="#">
+              <i class="plan-icon {{icon}}"></i>
+              <span class="title">{{title}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="feed">
         <div class="day">
           <span class="daytitle">Today</span>
@@ -28,7 +37,7 @@
           </ul>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
   <script src="/js/vendor/jquery.min.js" type="text/javascript"></script>
   <script src="/js/vendor/lesscss.min.js" type="text/javascript"></script>

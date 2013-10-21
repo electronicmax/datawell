@@ -1,8 +1,17 @@
 angular
   .module('datawell', ['ui'])
   .controller('mockup', function($scope, mockupdata) {
+  	var defaultApps = [
+  		{	title: 'Feed',
+  			icon: 'icon-feed' },
+  		{	title: 'Settings',
+  			icon: 'icon-cog' },
+  		{	title: 'Health record',
+  			icon: 'icon-record' }
+  	];
  	$scope.fakedata = mockupdata;
  	$scope.people = mockupdata.people;
+ 	$scope.apps = [].concat(defaultApps, mockupdata.apps)
   }).directive('reminder', function() {
 	return {
 		restrict:'E',
@@ -14,7 +23,7 @@ angular
 			return;
   		}
   	};
-}).directive('person', function() { 
+}).directive('person', function() {
 	return {
 		restrict:'E',
 		scope:{model:'=model'},

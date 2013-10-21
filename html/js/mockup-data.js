@@ -33,6 +33,17 @@ angular
    			      for_whom: "Johnny",
    			      message:'Schedule an MMR vaccination for Johnny'
    			   }
-   			]
+   			],
+            plans: [
+               {
+                  title: 'Heart'
+               },
+               {
+                  title: 'Quit smoking',
+                  icon: 'icon-smoking'
+               },
+               {
+                  title: 'Baby '}
+            ]
    		};
    });
