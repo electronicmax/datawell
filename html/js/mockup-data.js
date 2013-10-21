@@ -42,7 +42,7 @@ angular
                },
                smoking: {
                   title: 'Quit smoking',
-                  icon: 'icon-smoking'
+                  icon: 'icon-smile'
                },
                baby: {
                   title: 'Baby',

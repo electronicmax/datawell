@@ -3,24 +3,22 @@ angular
   .controller('mockup', function($scope, mockupdata) {
   	var defaultPlans = {
   		feed: {	title: 'Feed',
-  			icon: 'icon-feed' },
+  			icon: 'icon-reorder' },
   		settings: {	title: 'Settings',
   			icon: 'icon-cog' },
   		healthrecord: {	title: 'Health record',
-  			icon: 'icon-record' }
+  			icon: 'icon-user' }
   	};
  	$scope.fakedata = mockupdata;
  	//$scope.people = mockupdata.people;
- 	var allPlans = _.extend({}, defaultPlans, mockupdata.plans);
  	$scope.people = _.map(mockupdata.people, function (person) {
  		return _.extend({}, person, {
- 			plans: _.map(person.plans, function (plan) {
- 				return allPlans[plan];
- 			})
+ 			plans: _.values(defaultPlans).concat(_.map(person.plans, function (plan) {
+ 				return mockupdata.plans[plan];
+ 			}))
  		});
  	});
  	$scope.selected = { person: $scope.people[0] };
- 	console.log(allPlans)
  	window.$scope = $scope;
   }).directive('reminder', function() {
 	return {

@@ -8,18 +8,20 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<!-- cdmbase -->
 	<link rel="stylesheet/less" type="text/css" href="css/datawell.less"/>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<title>My DataWell</title>
 </head>
 <body ng-app="datawell" ng-controller="mockup" ng-cloak>
   <div class>
     <div class="sidebar">
-      <person ng-repeat="p in people" model='p'></person>
+      <person ng-repeat="p in people" model='p' ng-class="{ selected: model === $parent.selected.person }"></person>
     </div>
-    <div class="main">{{selected.person.name}}
+    <div class="main">
       <div class="tabbar">
         <ul>
-          <li ng-repeat="plan in selected.person.plans">
-            <a href="#">
+          <li ng-repeat="plan in selected.person.plans" ng-class="{ selected: plan === selected.plan }">
+            <a href="#" ng-click="selected.plan = plan">
               <i class="plan-icon {{plan.icon}}"></i>
               <span class="title">{{plan.title}}</span>
             </a>

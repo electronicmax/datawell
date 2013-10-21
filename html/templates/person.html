@@ -1,4 +1,4 @@
-<div class="person">
+<div class="person" ng-click="$parent.selected.person = model">
 	<div ng-style="{'background-image': 'url(\'' + model.img + '\')'}" class='circular'>
 	</div>
 	<span ng-bind="model.name" class="name"> {{ model.name }} </span>
