@@ -1,4 +1,5 @@
-<div ng-class="{reminder:true, heart:model.type=='heart'}">
+<div ng-class="{reminder:true, heart: model.type==='heart' }">
 	<h2>reminder</h2>
-	<div ng-bind="model.message"></div>	
+	<div ng-bind="model.for_whom"></div>
+	<div ng-bind="model.message"> {{ model.message }} </div>	
 </div>
