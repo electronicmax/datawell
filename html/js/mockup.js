@@ -1,17 +1,27 @@
 angular
   .module('datawell', ['ui'])
   .controller('mockup', function($scope, mockupdata) {
-  	var defaultApps = [
-  		{	title: 'Feed',
+  	var defaultPlans = {
+  		feed: {	title: 'Feed',
   			icon: 'icon-feed' },
-  		{	title: 'Settings',
+  		settings: {	title: 'Settings',
   			icon: 'icon-cog' },
-  		{	title: 'Health record',
+  		healthrecord: {	title: 'Health record',
   			icon: 'icon-record' }
-  	];
+  	};
  	$scope.fakedata = mockupdata;
- 	$scope.people = mockupdata.people;
- 	$scope.apps = [].concat(defaultApps, mockupdata.apps)
+ 	//$scope.people = mockupdata.people;
+ 	var allPlans = _.extend({}, defaultPlans, mockupdata.plans);
+ 	$scope.people = _.map(mockupdata.people, function (person) {
+ 		return _.extend({}, person, {
+ 			plans: _.map(person.plans, function (plan) {
+ 				return allPlans[plan];
+ 			})
+ 		});
+ 	});
+ 	$scope.selected = { person: $scope.people[0] };
+ 	console.log(allPlans)
+ 	window.$scope = $scope;
   }).directive('reminder', function() {
 	return {
 		restrict:'E',

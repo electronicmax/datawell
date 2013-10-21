@@ -15,13 +15,13 @@
     <div class="sidebar">
       <person ng-repeat="p in people" model='p'></person>
     </div>
-    <div class="main">
+    <div class="main">{{selected.person.name}}
       <div class="tabbar">
         <ul>
-          <li ng-repeat="plan in current_person.plans">
+          <li ng-repeat="plan in selected.person.plans">
             <a href="#">
-              <i class="plan-icon {{icon}}"></i>
-              <span class="title">{{title}}</span>
+              <i class="plan-icon {{plan.icon}}"></i>
+              <span class="title">{{plan.title}}</span>
             </a>
           </li>
         </ul>

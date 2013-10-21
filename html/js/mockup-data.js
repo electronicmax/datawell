@@ -6,6 +6,7 @@ angular
     			{
 	   			   name:"David",
 	   			   img:'images/family/david.jpg',
+                  plans: ['smoking', 'heart']
    			  },
 		      {
       			   name:"Elizabeth",
@@ -34,16 +35,19 @@ angular
    			      message:'Schedule an MMR vaccination for Johnny'
    			   }
    			],
-            plans: [
-               {
-                  title: 'Heart'
+            plans: {
+               heart: {
+                  title: 'Heart',
+                  icon: 'icon-heart'
                },
-               {
+               smoking: {
                   title: 'Quit smoking',
                   icon: 'icon-smoking'
                },
-               {
-                  title: 'Baby '}
-            ]
+               baby: {
+                  title: 'Baby',
+                  icon: 'icon-baby'
+               }
+            }
    		};
    });
