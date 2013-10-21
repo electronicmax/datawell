@@ -13,7 +13,7 @@
 <body ng-app="datawell" ng-controller="mockup" ng-cloak>
   <div class>
     <div class="sidebar">
-      <!-- people go here --> 
+      <person ng-repeat="p in people"></person>
     </div>
     <div class="main">
       <div class="tabbar"></div>
@@ -23,7 +23,7 @@
           <div class="progressbar" value="0.2"></div>
           <ul>
             <li ng-repeat="x in fakedata.today">
-              <reminder ng-show="x.type === 'reminder'" model="x"></reminder>
+              <reminder ng-show="model.type === 'reminder'" model="x"></reminder>
             </li>
           </ul>
         </div>
