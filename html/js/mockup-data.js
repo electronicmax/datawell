@@ -4,12 +4,20 @@ angular
    		return {
    			people: [
     			{
-	   			   name:"Max",
-	   			   img:'imgs/foobar.png',
+	   			   name:"David",
+	   			   img:'images/family/david.jpg',
    			  },
 		      {
-      			   name:"James",
-	   			   img:'imgs/foobar.png',
+      			   name:"Elizabeth",
+	   			   img:'images/family/elizabeth.jpg',
+   			  },
+		      {
+      			   name:"Michael",
+	   			   img:'images/family/michael.jpg',
+   			  },
+		      {
+      			   name:"Susan",
+	   			   img:'images/family/susan.png'
    			  }
    			],
    			today:[
